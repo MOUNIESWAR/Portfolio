@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Makaraju Mounieswar Raju</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="relative min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+    <main class="w-full max-w-5xl mx-auto">
+      <section id="contact" class="content-section rounded-3xl p-8 md:p-12 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4 neon-text">Connect With Me</h2>
+        <p class="text-slate-300 mb-6 max-w-2xl mx-auto">
+          I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out via email or find me on other platforms.
+        </p>
+        <form id="contact-form" action="https://formspree.io/f/mounieswaraju@gmail.com" method="POST" class="max-w-xl mx-auto">
+            <div class="mb-4">
+                <label for="name" class="block text-slate-300 text-sm font-bold mb-2">Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-white focus:outline-none focus:border-indigo-500">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-slate-300 text-sm font-bold mb-2">Email</label>
+                <input type="email" id="email" name="email" required class="w-full px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-white focus:outline-none focus:border-indigo-500">
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-slate-300 text-sm font-bold mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-white focus:outline-none focus:border-indigo-500"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="inline-block bg-indigo-500/50 text-white font-bold py-3 px-8 rounded-lg border border-indigo-400 hover:bg-indigo-500/80 transition-colors">
+                    Send Message
+                </button>
+            </div>
+        </form>
+        <div id="contact-form-status" class="mt-4 text-center text-white"></div>
+        <div class="mt-8 flex justify-center items-center gap-x-6">
+          <a href="https://www.linkedin.com/in/mounieswarraju" target="_blank" class="text-indigo-400 hover:text-white font-semibold transition-colors">LinkedIn</a>
+          <span class="text-slate-500">|</span>
+          <a href="https://github.com/mounieswarraju" target="_blank" class="text-indigo-400 hover:text-white font-semibold transition-colors">GitHub</a>
+        </div>
+        <div class="mt-12">
+          <a href="index.html" class="text-indigo-400 font-semibold hover:text-white transition-colors">&larr; Back to Portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="w-full max-w-5xl mx-auto text-center py-8 mt-4">
+      <p class="text-slate-400">&copy; 2024 Makaraju Mounieswar Raju. All rights reserved. | Tirupathi Naidu Palli</p>
+    </footer>
+  </div>
+
+  <script src="background.js" defer></script>
+  <script src="contact.js" defer></script>
+</body>
+</html>

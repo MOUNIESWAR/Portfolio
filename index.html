@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmic Web Portfolio - Makaraju Mounieswar Raju</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="sticky-nav">
+    <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <a href="#home" class="text-white font-bold text-lg">Makaraju Mounieswar Raju</a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="#home" class="nav-link text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-x-2" data-section="home">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <span>Home</span>
+            </a>
+
+            <a href="about.html" class="nav-link text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>About</span>
+            </a>
+            <a href="#experience" class="nav-link text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Experience</span>
+            </a>
+            <a href="#achievements" class="nav-link text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span>Achievements</span>
+            </a>
+            <a href="#projects" class="nav-link text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              <span>Projects</span>
+            </a>
+            <a href="#contact" class="nav-link text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700/50 focus:outline-none focus:ring-2 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="open-icon block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="close-icon hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#home" class="nav-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span>Home</span>
+        </a>
+        <a href="#about" class="nav-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>About</span>
+        </a>
+        <a href="#experience" class="nav-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Experience</span>
+        </a>
+        <a href="#achievements" class="nav-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span>Achievements</span>
+        </a>
+        <a href="#projects" class="nav-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/_2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <span>Projects</span>
+        </a>
+        <a href="#contact" class="nav-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="relative flex flex-col items-center p-4 sm:p-6 lg:p-8">
+    <header id="home" class="w-full max-w-5xl mx-auto py-16 md:py-24">
+      <div class="content-section rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 fade-in-section is-visible text-center md:text-left">
+        <img src="DSC_1360.JPG" 
+             alt="Makaraju Mounieswar Raju" 
+             class="flex-shrink-0 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-indigo-400/50 shadow-lg">
+        <div class="flex flex-col items-center md:items-start">
+          <h1 id="scramble-text" class="text-4xl md:text-5xl lg:text-6xl font-bold text-white neon-text">Makaraju Mounieswar Raju</h1>
+          <p class="mt-4 text-lg md:text-xl text-slate-300 max-w-2xl">
+            AI & ML Engineer | Software Developer | Technology Enthusiast
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
+            <a href="https://www.linkedin.com/in/mounieswarraju" target="_blank" class="text-indigo-400 hover:text-white font-semibold transition-colors">LinkedIn</a>
+            <a href="https://github.com/mounieswarraju" target="_blank" class="text-indigo-400 hover:text-white font-semibold transition-colors">GitHub</a>
+            <a href="mailto:mounieswaraju@gmail.com" class="text-indigo-400 hover:text-white font-semibold transition-colors">Email</a>
+          </div>
+          <div class="mt-8">
+            <a href="MounieswarRaju_InternshalaResume.pdf" target="_blank" class="inline-flex items-center gap-x-2 bg-indigo-500/50 text-white font-bold py-3 px-6 rounded-lg border border-indigo-400 hover:bg-indigo-500/80 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>View Resume</span>
+            </a>
+            <a href="about.html" class="inline-flex items-center gap-x-2 bg-indigo-500/50 text-white font-bold py-3 px-6 rounded-lg border border-indigo-400 hover:bg-indigo-500/80 transition-colors ml-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Learn More About Me</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full max-w-5xl mx-auto space-y-16 md:space-y-24">
+      
+
+      <section id="experience" class="content-section rounded-3xl p-8 md:p-12 fade-in-section">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center neon-text">Work Experience</h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+          <div>
+            <h3 class="text-xl font-bold text-white">Intern</h3>
+            <div class="flex justify-between items-baseline flex-wrap gap-x-2">
+              <p class="text-indigo-300 font-medium">IBM</p>
+              <p class="text-slate-400 text-sm">2022 - Present</p>
+            </div>
+            <p class="text-slate-300 mt-2 leading-relaxed">
+              Engaged in a university-integrated internship program, focusing on learning and applying core IBM technologies like Zowe and z17 servers as part of the curriculum.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white">Intern</h3>
+            <div class="flex justify-between items-baseline flex-wrap gap-x-2">
+              <p class="text-indigo-300 font-medium">Comax, Hyderabad</p>
+              <p class="text-slate-400 text-sm">July 2024 - Present</p>
+            </div>
+            <p class="text-slate-300 mt-2 leading-relaxed">
+              Actively contributing to projects in a dynamic team environment, gaining hands-on experience with Data Analysis (DA) and Data Science (DS).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="content-section rounded-3xl p-8 md:p-12 fade-in-section overflow-hidden">
+        <div class="skills-planet text-center">
+          <h2 class="text-3xl font-bold text-white mb-2 text-center neon-text">My Asteroid Belt of Skills</h2>
+          <p class="text-center text-slate-400">Hover over an asteroid to reveal the skill.</p>
+        </div>
+        <div class="skills-container">
+          <div class="asteroid-belt">
+            <a href="skills.html?skill=python" class="asteroid" data-skill="python">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Python</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Python</h4>
+                  <p class="text-sm text-slate-400">Proficient in Python for data analysis, ML, and web development.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=c" class="asteroid" data-skill="c">
+              <div class="skill-card">
+                <div class="skill-tag-visible">C</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">C</h4>
+                  <p class="text-sm text-slate-400">Solid understanding of C for system-level programming.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=java" class="asteroid" data-skill="java">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Java</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Java</h4>
+                  <p class="text-sm text-slate-400">Experienced in Java for building robust, object-oriented applications.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=html" class="asteroid" data-skill="html">
+              <div class="skill-card">
+                <div class="skill-tag-visible">HTML</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">HTML</h4>
+                  <p class="text-sm text-slate-400">Strong command of HTML5 for creating well-structured web pages.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=css" class="asteroid" data-skill="css">
+              <div class="skill-card">
+                <div class="skill-tag-visible">CSS</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">CSS</h4>
+                  <p class="text-sm text-slate-400">Skilled in using CSS3 to design responsive and visually appealing UIs.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=machine-learning" class="asteroid" data-skill="machine-learning">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Machine Learning</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Machine Learning</h4>
+                  <p class="text-sm text-slate-400">In-depth knowledge of ML algorithms; practical experience in model training.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=machine-learning-algorithm" class="asteroid" data-skill="machine-learning-algorithm">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Machine Learning Algorithm</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Machine Learning Algorithm</h4>
+                  <p class="text-sm text-slate-400">Deep understanding of the theory and practical application of ML algorithms.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=deep-learning" class="asteroid" data-skill="deep-learning">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Deep Learning</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Deep Learning</h4>
+                  <p class="text-sm text-slate-400">Proficient in designing and training deep neural networks.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=neural-networks" class="asteroid" data-skill="neural-networks">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Neural Networks</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Neural Networks</h4>
+                  <p class="text-sm text-slate-400">Strong understanding of various neural network architectures.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=neural-networking" class="asteroid" data-skill="neural-networking">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Neural Networking</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Neural Networking</h4>
+                  <p class="text-sm text-slate-400">Knowledge of designing and implementing neural network models.</p>
+                </div>
+              </div>
+            </a>
+            <a href="skills.html?skill=prompt-engineering" class="asteroid" data-skill="prompt-engineering">
+              <div class="skill-card">
+                <div class="skill-tag-visible">Prompt Engineering</div>
+                <div class="skill-details">
+                  <h4 class="text-lg font-bold mb-1">Prompt Engineering</h4>
+                  <p class="text-sm text-slate-400">Skilled in designing and refining prompts for large language models.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements" class="content-section rounded-3xl p-8 md:p-12 fade-in-section">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center neon-text">🏅 Achievements & Awards</h2>
+        <div class="max-w-3xl mx-auto space-y-6 achievement-list">
+          <div class="achievement-item flex items-start gap-x-4 p-4 rounded-lg">
+            <span class="text-2xl mt-1">🥇</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">IBM ICE DAY Award</h3>
+              <p class="text-slate-300 leading-relaxed">Recognized for outstanding performance and contributions during the IBM ICE Day event.</p>
+            </div>
+          </div>
+          <div class="achievement-item flex items-start gap-x-4 p-4 rounded-lg">
+            <span class="text-2xl mt-1">🛠️</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Hosted Hackathon "Code was 2K24"</h3>
+              <p class="text-slate-300 leading-relaxed">Co-organized and hosted a successful hackathon in collaboration with Aiswe Technologies, fostering innovation and coding culture.</p>
+            </div>
+          </div>
+          <div class="achievement-item flex items-start gap-x-4 p-4 rounded-lg">
+            <span class="text-2xl mt-1">👨‍💻</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Active on Kaggle & GitHub</h3>
+              <p class="text-slate-300 leading-relaxed">Consistently contribute to open-source projects and participate in data science competitions, showcasing practical skills.</p>
+            </div>
+          </div>
+          <div class="achievement-item flex items-start gap-x-4 p-4 rounded-lg">
+            <span class="text-2xl mt-1">🌐</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">AI Summit Participation</h3>
+              <p class="text-slate-300 leading-relaxed">Engaged in multiple AI summits, staying updated with the latest industry trends and networking with professionals.</p>
+            </div>
+          </div>
+          <div class="achievement-item flex items-start gap-x-4 p-4 rounded-lg">
+            <span class="text-2xl mt-1">🏆</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">IBM Z Day Challenges & Badges</h3>
+              <p class="text-slate-300 leading-relaxed">Successfully completed various challenges and earned digital badges, demonstrating proficiency in IBM Z technologies.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="content-section rounded-3xl p-8 md:p-12 fade-in-section">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center neon-text">Galactic Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="glass-card rounded-xl p-6 flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-2">AI-Powered Music Composition</h3>
+            <p class="text-slate-400 flex-grow mb-4">
+              Developing a generative AI model to compose original music. This ongoing project involves curating and preprocessing audio datasets, fine-tuning machine learning models, and implementing advanced audio synthesis techniques to produce novel musical pieces.
+            </p>
+            <a href="project-music-composition.html" class="mt-auto self-center inline-block bg-indigo-500/20 text-indigo-300 font-semibold py-2 px-5 rounded-lg border border-indigo-500/50 hover:bg-indigo-500/40 hover:text-white transition-colors">
+              View Project Details &rarr;
+            </a>
+          </div>
+          <div class="glass-card rounded-xl p-6 flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-2">Driving School Web Page Design</h3>
+            <p class="text-slate-400 flex-grow mb-4">
+              Designed a responsive and intuitive website concept for a local driving school. The project focused on creating a seamless user experience (UX) with clear information architecture, a streamlined class registration process, and a modern UI to enhance online presence.
+            </p>
+            <a href="project-driving-school.html" class="mt-auto self-center inline-block bg-indigo-500/20 text-indigo-300 font-semibold py-2 px-5 rounded-lg border border-indigo-500/50 hover:bg-indigo-500/40 hover:text-white transition-colors">
+              View Project Details &rarr;
+            </a>
+          </div>
+          <div class="glass-card rounded-xl p-6 flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-2">Traffic Sign Classification using Deep Learning</h3>
+            <p class="text-slate-400 flex-grow mb-4">
+              Leveraged Convolutional Neural Networks (CNNs) to build a model that accurately classifies traffic signs from images. The project included data augmentation, training on a public dataset, and performance evaluation to achieve high accuracy.
+            </p>
+            <a href="project-traffic-sign.html" class="mt-auto self-center inline-block bg-indigo-500/20 text-indigo-300 font-semibold py-2 px-5 rounded-lg border border-indigo-500/50 hover:bg-indigo-500/40 hover:text-white transition-colors">
+              View Project Details &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="content-section rounded-3xl p-8 md:p-12 text-center fade-in-section">
+        <h2 class="text-3xl font-bold text-white mb-4 neon-text">Get In Touch</h2>
+        <p class="text-slate-300 mb-6 max-w-2xl mx-auto">Interested in working together or have a question? I'd love to hear from you.</p>
+        <a href="contact.html" class="inline-block bg-indigo-500/50 text-white font-bold py-3 px-8 rounded-lg border border-indigo-400 hover:bg-indigo-500/80 transition-colors">
+          Contact Me &rarr;
+        </a>
+      </section>
+    </main>
+
+    <footer class="w-full max-w-5xl mx-auto text-center py-8 mt-12">
+      <p class="text-slate-400">&copy; 2024 Makaraju Mounieswar Raju. All rights reserved. | Tirupathi Naidu Palli</p>
+    </footer>
+  </div>
+
+  <script src="background.js" defer></script>
+  <script src="scroll-animation.js" defer></script>
+  <script src="text-scramble.js" defer></script>
+</body>
+</html>

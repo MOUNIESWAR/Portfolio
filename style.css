@@ -1,0 +1,165 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Offset for sticky nav. 4rem (h-16) + 1rem space */
+}
+
+body {
+  font-family: 'Lilita One', sans-serif;
+  letter-spacing: 1px;
+  color: #cbd5e1; /* Slate 300 */
+  background-color: #0a192f; /* Dark Navy - Dominant */
+  overflow-x: hidden;
+}
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.content-section {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+.glass-card {
+  background-color: transparent;
+  border: 1px solid rgba(70, 93, 132, 0.5); /* Lighter Navy Border */
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  background-color: rgba(49, 68, 106, 0.4);
+  border-color: rgba(129, 140, 248, 0.7); /* Indigo 400 */
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(129, 140, 248, 0.25);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.asteroid-belt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.skill-card {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(10px) scale(1);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2), 0 0 5px rgba(99, 102, 241, 0.1) inset;
+}
+.fade-in-section.is-visible .skill-card {
+  opacity: 5;
+  transform: translateY(0) scale(1);
+}
+.skill-tag-visible {
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+.skill-details {
+  position: absolute;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+.skill-card:hover {
+  width: 280px;
+  height: 180px;
+  border-radius: 20px;
+  border-color: rgba(129, 140, 248, 0.5);
+  background-color: rgba(49, 68, 106, 0.5);
+  align-items: flex-start;
+  z-index: 10;
+  transform: translateY(-5px) scale(1.2);
+}
+.skill-card:hover .skill-tag-visible {
+  opacity: 0;
+  transition-delay: 0s;
+}
+.skill-card:hover .skill-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+.neon-text {
+  text-shadow: none;
+}
+
+/* Sticky Navigation */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(10, 25, 47, 0.85); /* Dark Navy with more opacity */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(49, 68, 106, 0.5);
+  transition: top 0.3s ease-in-out;
+}
+.nav-link.active {
+  color: #a5b4fc; /* Indigo 300 */
+  text-shadow: 0 0 8px rgba(129, 140, 248, 0.8); /* Indigo 400 */
+}
+
+@keyframes jiggle {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+/* For scroll animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-link:hover {
+  /* The color transition is handled by Tailwind's hover:text-white */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Achievement List Item Hover Effect */
+.achievement-item {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.achievement-item:hover {
+  background-color: rgba(49, 68, 106, 0.15); /* A very subtle background */
+  transform: translateY(-3px); /* A slight lift */
+}

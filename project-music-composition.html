@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project: AI Music Composition - Makaraju Mounieswar Raju</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="relative min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+    <main class="w-full max-w-5xl mx-auto">
+      <section class="content-section rounded-3xl p-8 md:p-12 fade-in-section">
+        <h2 class="text-3xl font-bold text-white mb-4 text-center neon-text">AI-Powered Music Composition</h2>
+        <p class="text-slate-300 mb-8 text-center max-w-3xl mx-auto">
+          A deep dive into the world of generative AI to create original musical pieces from scratch.
+        </p>
+
+        <div class="text-center mb-10">
+          <a href="https://github.com/MOUNIESWAR/AI-Powered-music-composition" target="_blank" class="inline-block bg-indigo-500/20 text-indigo-300 font-semibold py-2 px-5 rounded-lg border border-indigo-500/50 hover:bg-indigo-500/40 hover:text-white transition-colors">
+            View on GitHub &rarr;
+          </a>
+        </div>
+
+        <div class="space-y-8 text-left">
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Project Overview</h3>
+            <p class="text-slate-300 leading-relaxed">
+              This ongoing project explores the intersection of artificial intelligence and creativity. The primary goal is to develop a generative model capable of composing novel music. This involves extensive work in data preprocessing of MIDI and audio datasets, experimenting with various neural network architectures like LSTMs and Transformers, and fine-tuning models to understand musical theory, harmony, and rhythm. The ultimate aim is to produce music that is not only technically sound but also emotionally resonant.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Technologies Used</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">Python</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">TensorFlow/Keras</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">Librosa</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">MIDI</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">Generative Models</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Challenges & Learning</h3>
+            <p class="text-slate-300 leading-relaxed">
+              One of the main challenges is curating a high-quality, diverse dataset that can teach the model a wide range of musical styles. Another significant hurdle is managing the long-term dependencies in music, which is crucial for creating coherent compositions. This project has been an incredible learning experience in advanced deep learning techniques and the nuances of audio data processing.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Current Status</h3>
+            <p class="text-slate-300 leading-relaxed">
+              The project is currently in the model development and fine-tuning phase. Early results are promising, with the model generating short, coherent melodies. The next steps involve scaling up the model and dataset to produce longer, more complex compositions.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="index.html#projects" class="text-indigo-400 font-semibold hover:text-white transition-colors">&larr; Back to Projects</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="w-full max-w-5xl mx-auto text-center py-8 mt-4">
+      <p class="text-slate-400">&copy; 2024 Makaraju Mounieswar Raju. All rights reserved. | Tirupathi Naidu Palli</p>
+    </footer>
+  </div>
+
+  <script src="background.js" defer></script>
+  <script src="scroll-animation.js" defer></script>
+</body>
+</html>

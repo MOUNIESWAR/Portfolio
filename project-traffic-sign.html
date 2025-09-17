@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project: Traffic Sign Classification - Makaraju Mounieswar Raju</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="relative min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+    <main class="w-full max-w-5xl mx-auto">
+      <section class="content-section rounded-3xl p-8 md:p-12 fade-in-section">
+        <h2 class="text-3xl font-bold text-white mb-4 text-center neon-text">Traffic Sign Classification using Deep Learning</h2>
+        <p class="text-slate-300 mb-8 text-center max-w-3xl mx-auto">
+          An application of Convolutional Neural Networks (CNNs) to accurately identify and classify traffic signs from image data.
+        </p>
+
+        <div class="text-center mb-10">
+          <a href="https://github.com/MOUNIESWAR/traffic-sign-classification" target="_blank" class="inline-block bg-indigo-500/20 text-indigo-300 font-semibold py-2 px-5 rounded-lg border border-indigo-500/50 hover:bg-indigo-500/40 hover:text-white transition-colors">
+            View on GitHub &rarr;
+          </a>
+        </div>
+
+        <div class="space-y-8 text-left">
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Project Overview</h3>
+            <p class="text-slate-300 leading-relaxed">
+              This project demonstrates the practical application of deep learning for computer vision tasks. The core objective was to build a robust classifier for traffic signs, a critical component for autonomous driving systems and driver-assistance technologies. The model was trained on the German Traffic Sign Recognition Benchmark (GTSRB) dataset, and the process included extensive data preprocessing, augmentation to improve model generalization, and the implementation of a Convolutional Neural Network (CNN) architecture.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Technologies Used</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">Python</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">TensorFlow/Keras</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">OpenCV</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">Scikit-learn</span>
+              <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full">CNNs</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Challenges & Learning</h3>
+            <p class="text-slate-300 leading-relaxed">
+              A key challenge was handling the class imbalance present in the dataset and dealing with variations in image quality (e.g., lighting, angle, and obstructions). This project provided deep insights into building an end-to-end computer vision pipeline, from data loading and augmentation to model architecture design, training, and evaluation. Fine-tuning the CNN architecture and hyperparameters to prevent overfitting while maximizing accuracy was a significant learning experience.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-indigo-300 mb-2">Current Status</h3>
+            <p class="text-slate-300 leading-relaxed">
+              The model has been successfully trained and achieves a high accuracy rate on the test set. Future work could involve deploying the model as a web application or integrating it into a real-time video feed for live classification.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="index.html#projects" class="text-indigo-400 font-semibold hover:text-white transition-colors">&larr; Back to Projects</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="w-full max-w-5xl mx-auto text-center py-8 mt-4">
+      <p class="text-slate-400">&copy; 2024 Makaraju Mounieswar Raju. All rights reserved. | Tirupathi Naidu Palli</p>
+    </footer>
+  </div>
+
+  <script src="background.js" defer></script>
+  <script src="scroll-animation.js" defer></script>
+</body>
+</html>
